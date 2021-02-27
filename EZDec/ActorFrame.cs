@@ -24,7 +24,7 @@ namespace ActorFrame
                 Console.WriteLine("Sprite name for actor frame is not 4 characters!");
                 spriteName = "TNT1";
             }
-            if(isCharValid(index))
+            if(IsCharValid(index))
             {
                 spriteIndex = index.ToString().ToUpper();
             }
@@ -44,7 +44,7 @@ namespace ActorFrame
             this.dfunction = func;
         }
 
-        private bool isCharValid(char c)
+        private bool IsCharValid(char c)
         {
             if(c >= 0x0041 &&  c <= 0x005A)
             {

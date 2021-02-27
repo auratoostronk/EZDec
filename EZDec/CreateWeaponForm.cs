@@ -24,6 +24,7 @@ namespace MapEditor
             this.InputAmmoType.Text = "Clip";
             this.InputSlotNumber.Text = "1";
             this.InputStateFunction.Text = "None";
+            this.InputMissileArg1.Text = "Rocket";
         }
 
         private void WriteWeaponToFile(object sender, EventArgs e)
@@ -76,7 +77,9 @@ namespace MapEditor
             }
             else if (this.InputStateFunction.Text.Equals("Fire Projectile"))
             {
-                DecorateFunction.DecorateFunction dfunc = new DecorateFunction.DecorateFunction("A_FireMissile", null);
+                DecorateFunction.DecorateFunction dfunc = new DecorateFunction.DecorateFunction("A_FireCustomMissile",
+                    new string[] { "\"" + this.InputMissileArg1.SelectedItem.ToString() + "\"", "0.0", "true", "0.0", "-2.0", "0", "0.0"});
+          
                 frames.Add(new ActorFrame.ActorFrame(this.InputStateSprite.Text, this.InputStateFrame.Text.ToCharArray()[0], (int)this.InputStateDuration.Value, dfunc));
                 this.StatesAdded.Items.Add(frames.ElementAt(frames.Count - 1));
             }
@@ -104,10 +107,18 @@ namespace MapEditor
             if (this.InputStateFunction.SelectedItem.ToString().Equals("Fire Hitscan"))
             {
                 this.SetBulletArgsVisibility(true);
+                this.SetMissileArgsVisibility(false);
+            }
+            else if(this.InputStateFunction.SelectedItem.ToString().Equals("Fire Projectile"))
+            {
+
+                this.SetBulletArgsVisibility(false);
+                this.SetMissileArgsVisibility(true);
             }
             else
             {
                 this.SetBulletArgsVisibility(false);
+                this.SetMissileArgsVisibility(false);
             }
         }
         private void SetBulletArgsVisibility(bool vis)
@@ -120,7 +131,11 @@ namespace MapEditor
             InputBulletsArg3.Visible = vis;
             LabelBulletsArg4.Visible = vis;
             InputBulletsArg4.Visible = vis;
-
+        }
+        private void SetMissileArgsVisibility(bool vis)
+        {
+            LabelMissileArg1.Visible = vis;
+            InputMissileArg1.Visible = vis;
         }
 
         private void RemoveActorFrame(object sender, EventArgs e)

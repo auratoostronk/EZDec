@@ -55,40 +55,42 @@ namespace MapEditor
             this.InputReadySprite = new System.Windows.Forms.TextBox();
             this.StatesAdded = new System.Windows.Forms.ListBox();
             this.ButtonCancel = new System.Windows.Forms.Button();
-            this.decorateFunctionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.actorFrameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddStateButton = new System.Windows.Forms.Button();
             this.RemoveStateButton = new System.Windows.Forms.Button();
             this.GroupWeaponAttackStates = new System.Windows.Forms.GroupBox();
-            this.LabelStateSprite = new System.Windows.Forms.Label();
-            this.InputStateSprite = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.InputStateFrame = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.InputStateDuration = new System.Windows.Forms.NumericUpDown();
             this.GroupActionArgs = new System.Windows.Forms.GroupBox();
-            this.InputBulletsArg1 = new System.Windows.Forms.NumericUpDown();
-            this.LabelBulletsArg1 = new System.Windows.Forms.Label();
-            this.LabelBulletsArg2 = new System.Windows.Forms.Label();
-            this.InputBulletsArg2 = new System.Windows.Forms.NumericUpDown();
-            this.LabelBulletsArg3 = new System.Windows.Forms.Label();
-            this.InputBulletsArg3 = new System.Windows.Forms.NumericUpDown();
             this.InputBulletsArg4 = new System.Windows.Forms.NumericUpDown();
             this.LabelBulletsArg4 = new System.Windows.Forms.Label();
+            this.InputBulletsArg3 = new System.Windows.Forms.NumericUpDown();
+            this.LabelBulletsArg3 = new System.Windows.Forms.Label();
+            this.InputBulletsArg2 = new System.Windows.Forms.NumericUpDown();
+            this.LabelBulletsArg2 = new System.Windows.Forms.Label();
+            this.LabelBulletsArg1 = new System.Windows.Forms.Label();
+            this.InputBulletsArg1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.InputStateFunction = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.InputStateDuration = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.InputStateFrame = new System.Windows.Forms.TextBox();
+            this.LabelStateSprite = new System.Windows.Forms.Label();
+            this.InputStateSprite = new System.Windows.Forms.TextBox();
+            this.LabelMissileArg1 = new System.Windows.Forms.Label();
+            this.InputMissileArg1 = new System.Windows.Forms.ComboBox();
+            this.decorateFunctionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.actorFrameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoGive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoUse)).BeginInit();
             this.GroupWeaponProperties.SuspendLayout();
+            this.GroupWeaponAttackStates.SuspendLayout();
+            this.GroupActionArgs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.decorateFunctionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actorFrameBindingSource)).BeginInit();
-            this.GroupWeaponAttackStates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).BeginInit();
-            this.GroupActionArgs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg4)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelAmmoType
@@ -378,9 +380,9 @@ namespace MapEditor
             this.StatesAdded.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatesAdded.FormattingEnabled = true;
             this.StatesAdded.ItemHeight = 18;
-            this.StatesAdded.Location = new System.Drawing.Point(421, 173);
+            this.StatesAdded.Location = new System.Drawing.Point(426, 169);
             this.StatesAdded.Name = "StatesAdded";
-            this.StatesAdded.Size = new System.Drawing.Size(190, 130);
+            this.StatesAdded.Size = new System.Drawing.Size(190, 148);
             this.StatesAdded.TabIndex = 17;
             // 
             // ButtonCancel
@@ -394,14 +396,6 @@ namespace MapEditor
             this.ButtonCancel.Text = "Cancel";
             this.ButtonCancel.UseVisualStyleBackColor = true;
             this.ButtonCancel.Click += new System.EventHandler(this.CancelButtonClick);
-            // 
-            // decorateFunctionBindingSource
-            // 
-            this.decorateFunctionBindingSource.DataSource = typeof(DecorateFunction.DecorateFunction);
-            // 
-            // actorFrameBindingSource
-            // 
-            this.actorFrameBindingSource.DataSource = typeof(ActorFrame.ActorFrame);
             // 
             // AddStateButton
             // 
@@ -446,78 +440,10 @@ namespace MapEditor
             this.GroupWeaponAttackStates.TabStop = false;
             this.GroupWeaponAttackStates.Text = "Weapon Attack States";
             // 
-            // LabelStateSprite
-            // 
-            this.LabelStateSprite.AutoSize = true;
-            this.LabelStateSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelStateSprite.Location = new System.Drawing.Point(9, 28);
-            this.LabelStateSprite.Name = "LabelStateSprite";
-            this.LabelStateSprite.Size = new System.Drawing.Size(43, 18);
-            this.LabelStateSprite.TabIndex = 2;
-            this.LabelStateSprite.Text = "Sprite";
-            // 
-            // InputStateSprite
-            // 
-            this.InputStateSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateSprite.Location = new System.Drawing.Point(9, 49);
-            this.InputStateSprite.MaxLength = 4;
-            this.InputStateSprite.Name = "InputStateSprite";
-            this.InputStateSprite.Size = new System.Drawing.Size(57, 23);
-            this.InputStateSprite.TabIndex = 1;
-            this.InputStateSprite.Tag = "";
-            this.InputStateSprite.Text = "PISG";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Frame";
-            // 
-            // InputStateFrame
-            // 
-            this.InputStateFrame.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateFrame.Location = new System.Drawing.Point(76, 49);
-            this.InputStateFrame.MaxLength = 1;
-            this.InputStateFrame.Name = "InputStateFrame";
-            this.InputStateFrame.Size = new System.Drawing.Size(42, 23);
-            this.InputStateFrame.TabIndex = 3;
-            this.InputStateFrame.Tag = "";
-            this.InputStateFrame.Text = "A";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Duration";
-            // 
-            // InputStateDuration
-            // 
-            this.InputStateDuration.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateDuration.Location = new System.Drawing.Point(126, 49);
-            this.InputStateDuration.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.InputStateDuration.Name = "InputStateDuration";
-            this.InputStateDuration.Size = new System.Drawing.Size(43, 23);
-            this.InputStateDuration.TabIndex = 9;
-            this.InputStateDuration.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // GroupActionArgs
             // 
+            this.GroupActionArgs.Controls.Add(this.InputMissileArg1);
+            this.GroupActionArgs.Controls.Add(this.LabelMissileArg1);
             this.GroupActionArgs.Controls.Add(this.InputBulletsArg4);
             this.GroupActionArgs.Controls.Add(this.LabelBulletsArg4);
             this.GroupActionArgs.Controls.Add(this.InputBulletsArg3);
@@ -533,102 +459,6 @@ namespace MapEditor
             this.GroupActionArgs.TabIndex = 14;
             this.GroupActionArgs.TabStop = false;
             this.GroupActionArgs.Text = "Arguments";
-            // 
-            // InputBulletsArg1
-            // 
-            this.InputBulletsArg1.DecimalPlaces = 1;
-            this.InputBulletsArg1.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.InputBulletsArg1.Location = new System.Drawing.Point(2, 40);
-            this.InputBulletsArg1.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            65536});
-            this.InputBulletsArg1.Name = "InputBulletsArg1";
-            this.InputBulletsArg1.Size = new System.Drawing.Size(74, 23);
-            this.InputBulletsArg1.TabIndex = 0;
-            this.InputBulletsArg1.Value = new decimal(new int[] {
-            56,
-            0,
-            0,
-            65536});
-            this.InputBulletsArg1.Visible = false;
-            // 
-            // LabelBulletsArg1
-            // 
-            this.LabelBulletsArg1.AutoSize = true;
-            this.LabelBulletsArg1.Location = new System.Drawing.Point(2, 19);
-            this.LabelBulletsArg1.Name = "LabelBulletsArg1";
-            this.LabelBulletsArg1.Size = new System.Drawing.Size(59, 18);
-            this.LabelBulletsArg1.TabIndex = 1;
-            this.LabelBulletsArg1.Text = "X Spread";
-            this.LabelBulletsArg1.Visible = false;
-            // 
-            // LabelBulletsArg2
-            // 
-            this.LabelBulletsArg2.AutoSize = true;
-            this.LabelBulletsArg2.Location = new System.Drawing.Point(80, 19);
-            this.LabelBulletsArg2.Name = "LabelBulletsArg2";
-            this.LabelBulletsArg2.Size = new System.Drawing.Size(59, 18);
-            this.LabelBulletsArg2.TabIndex = 3;
-            this.LabelBulletsArg2.Text = "Y Spread";
-            this.LabelBulletsArg2.Visible = false;
-            // 
-            // InputBulletsArg2
-            // 
-            this.InputBulletsArg2.DecimalPlaces = 1;
-            this.InputBulletsArg2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.InputBulletsArg2.Location = new System.Drawing.Point(83, 40);
-            this.InputBulletsArg2.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            65536});
-            this.InputBulletsArg2.Name = "InputBulletsArg2";
-            this.InputBulletsArg2.Size = new System.Drawing.Size(79, 23);
-            this.InputBulletsArg2.TabIndex = 4;
-            this.InputBulletsArg2.Visible = false;
-            // 
-            // LabelBulletsArg3
-            // 
-            this.LabelBulletsArg3.AutoSize = true;
-            this.LabelBulletsArg3.Location = new System.Drawing.Point(175, 19);
-            this.LabelBulletsArg3.Name = "LabelBulletsArg3";
-            this.LabelBulletsArg3.Size = new System.Drawing.Size(80, 18);
-            this.LabelBulletsArg3.TabIndex = 5;
-            this.LabelBulletsArg3.Text = "Bullets Fired";
-            this.LabelBulletsArg3.Visible = false;
-            // 
-            // InputBulletsArg3
-            // 
-            this.InputBulletsArg3.Location = new System.Drawing.Point(178, 40);
-            this.InputBulletsArg3.Maximum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            this.InputBulletsArg3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.InputBulletsArg3.Name = "InputBulletsArg3";
-            this.InputBulletsArg3.Size = new System.Drawing.Size(77, 23);
-            this.InputBulletsArg3.TabIndex = 6;
-            this.InputBulletsArg3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.InputBulletsArg3.Visible = false;
             // 
             // InputBulletsArg4
             // 
@@ -664,6 +494,102 @@ namespace MapEditor
             this.LabelBulletsArg4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LabelBulletsArg4.Visible = false;
             // 
+            // InputBulletsArg3
+            // 
+            this.InputBulletsArg3.Location = new System.Drawing.Point(178, 40);
+            this.InputBulletsArg3.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.InputBulletsArg3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.InputBulletsArg3.Name = "InputBulletsArg3";
+            this.InputBulletsArg3.Size = new System.Drawing.Size(77, 23);
+            this.InputBulletsArg3.TabIndex = 6;
+            this.InputBulletsArg3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.InputBulletsArg3.Visible = false;
+            // 
+            // LabelBulletsArg3
+            // 
+            this.LabelBulletsArg3.AutoSize = true;
+            this.LabelBulletsArg3.Location = new System.Drawing.Point(175, 19);
+            this.LabelBulletsArg3.Name = "LabelBulletsArg3";
+            this.LabelBulletsArg3.Size = new System.Drawing.Size(80, 18);
+            this.LabelBulletsArg3.TabIndex = 5;
+            this.LabelBulletsArg3.Text = "Bullets Fired";
+            this.LabelBulletsArg3.Visible = false;
+            // 
+            // InputBulletsArg2
+            // 
+            this.InputBulletsArg2.DecimalPlaces = 1;
+            this.InputBulletsArg2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.InputBulletsArg2.Location = new System.Drawing.Point(83, 40);
+            this.InputBulletsArg2.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            65536});
+            this.InputBulletsArg2.Name = "InputBulletsArg2";
+            this.InputBulletsArg2.Size = new System.Drawing.Size(79, 23);
+            this.InputBulletsArg2.TabIndex = 4;
+            this.InputBulletsArg2.Visible = false;
+            // 
+            // LabelBulletsArg2
+            // 
+            this.LabelBulletsArg2.AutoSize = true;
+            this.LabelBulletsArg2.Location = new System.Drawing.Point(80, 19);
+            this.LabelBulletsArg2.Name = "LabelBulletsArg2";
+            this.LabelBulletsArg2.Size = new System.Drawing.Size(59, 18);
+            this.LabelBulletsArg2.TabIndex = 3;
+            this.LabelBulletsArg2.Text = "Y Spread";
+            this.LabelBulletsArg2.Visible = false;
+            // 
+            // LabelBulletsArg1
+            // 
+            this.LabelBulletsArg1.AutoSize = true;
+            this.LabelBulletsArg1.Location = new System.Drawing.Point(2, 19);
+            this.LabelBulletsArg1.Name = "LabelBulletsArg1";
+            this.LabelBulletsArg1.Size = new System.Drawing.Size(59, 18);
+            this.LabelBulletsArg1.TabIndex = 1;
+            this.LabelBulletsArg1.Text = "X Spread";
+            this.LabelBulletsArg1.Visible = false;
+            // 
+            // InputBulletsArg1
+            // 
+            this.InputBulletsArg1.DecimalPlaces = 1;
+            this.InputBulletsArg1.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.InputBulletsArg1.Location = new System.Drawing.Point(2, 40);
+            this.InputBulletsArg1.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            65536});
+            this.InputBulletsArg1.Name = "InputBulletsArg1";
+            this.InputBulletsArg1.Size = new System.Drawing.Size(74, 23);
+            this.InputBulletsArg1.TabIndex = 0;
+            this.InputBulletsArg1.Value = new decimal(new int[] {
+            56,
+            0,
+            0,
+            65536});
+            this.InputBulletsArg1.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -691,6 +617,113 @@ namespace MapEditor
             this.InputStateFunction.Tag = "";
             this.InputStateFunction.DropDownClosed += new System.EventHandler(this.OnActionFunctionSelected);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(124, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Duration";
+            // 
+            // InputStateDuration
+            // 
+            this.InputStateDuration.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputStateDuration.Location = new System.Drawing.Point(126, 49);
+            this.InputStateDuration.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.InputStateDuration.Name = "InputStateDuration";
+            this.InputStateDuration.Size = new System.Drawing.Size(43, 23);
+            this.InputStateDuration.TabIndex = 9;
+            this.InputStateDuration.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(73, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Frame";
+            // 
+            // InputStateFrame
+            // 
+            this.InputStateFrame.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputStateFrame.Location = new System.Drawing.Point(76, 49);
+            this.InputStateFrame.MaxLength = 1;
+            this.InputStateFrame.Name = "InputStateFrame";
+            this.InputStateFrame.Size = new System.Drawing.Size(42, 23);
+            this.InputStateFrame.TabIndex = 3;
+            this.InputStateFrame.Tag = "";
+            this.InputStateFrame.Text = "A";
+            // 
+            // LabelStateSprite
+            // 
+            this.LabelStateSprite.AutoSize = true;
+            this.LabelStateSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelStateSprite.Location = new System.Drawing.Point(9, 28);
+            this.LabelStateSprite.Name = "LabelStateSprite";
+            this.LabelStateSprite.Size = new System.Drawing.Size(43, 18);
+            this.LabelStateSprite.TabIndex = 2;
+            this.LabelStateSprite.Text = "Sprite";
+            // 
+            // InputStateSprite
+            // 
+            this.InputStateSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputStateSprite.Location = new System.Drawing.Point(9, 49);
+            this.InputStateSprite.MaxLength = 4;
+            this.InputStateSprite.Name = "InputStateSprite";
+            this.InputStateSprite.Size = new System.Drawing.Size(57, 23);
+            this.InputStateSprite.TabIndex = 1;
+            this.InputStateSprite.Tag = "";
+            this.InputStateSprite.Text = "PISG";
+            // 
+            // LabelMissileArg1
+            // 
+            this.LabelMissileArg1.AutoSize = true;
+            this.LabelMissileArg1.Location = new System.Drawing.Point(2, 19);
+            this.LabelMissileArg1.Name = "LabelMissileArg1";
+            this.LabelMissileArg1.Size = new System.Drawing.Size(79, 18);
+            this.LabelMissileArg1.TabIndex = 17;
+            this.LabelMissileArg1.Text = "Missile Type";
+            this.LabelMissileArg1.Visible = false;
+            // 
+            // InputMissileArg1
+            // 
+            this.InputMissileArg1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputMissileArg1.FormattingEnabled = true;
+            this.InputMissileArg1.Items.AddRange(new object[] {
+            "Rocket",
+            "PlasmaBall",
+            "BFGBall",
+            "DoomImpBall",
+            "BaronBall",
+            "ArachnotronPlasma",
+            "RevenantTracer",
+            "FatShot"});
+            this.InputMissileArg1.Location = new System.Drawing.Point(3, 40);
+            this.InputMissileArg1.Name = "InputMissileArg1";
+            this.InputMissileArg1.Size = new System.Drawing.Size(169, 26);
+            this.InputMissileArg1.TabIndex = 18;
+            this.InputMissileArg1.Visible = false;
+            // 
+            // decorateFunctionBindingSource
+            // 
+            this.decorateFunctionBindingSource.DataSource = typeof(DecorateFunction.DecorateFunction);
+            // 
+            // actorFrameBindingSource
+            // 
+            this.actorFrameBindingSource.DataSource = typeof(ActorFrame.ActorFrame);
+            // 
             // CreateWeaponForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,17 +744,17 @@ namespace MapEditor
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoUse)).EndInit();
             this.GroupWeaponProperties.ResumeLayout(false);
             this.GroupWeaponProperties.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.decorateFunctionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.actorFrameBindingSource)).EndInit();
             this.GroupWeaponAttackStates.ResumeLayout(false);
             this.GroupWeaponAttackStates.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).EndInit();
             this.GroupActionArgs.ResumeLayout(false);
             this.GroupActionArgs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputBulletsArg1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.decorateFunctionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actorFrameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -774,6 +807,8 @@ namespace MapEditor
         private System.Windows.Forms.TextBox InputStateFrame;
         private System.Windows.Forms.Label LabelStateSprite;
         private System.Windows.Forms.TextBox InputStateSprite;
+        private System.Windows.Forms.ComboBox InputMissileArg1;
+        private System.Windows.Forms.Label LabelMissileArg1;
     }
 }
 
