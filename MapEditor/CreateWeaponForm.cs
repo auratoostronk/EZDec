@@ -15,7 +15,7 @@ namespace MapEditor
     public partial class CreateWeaponForm : Form
     {
 
-        private List<ActorFrame.ActorFrame> frames;
+        private readonly List<ActorFrame.ActorFrame> frames;
 
         public CreateWeaponForm()
         {
@@ -65,7 +65,7 @@ namespace MapEditor
             this.Close();
         }
 
-        private void addActorFrame(object sender, EventArgs e)
+        private void AddActorFrame(object sender, EventArgs e)
         {
             if(this.InputStateFunction.Text.Equals("Fire Hitscan"))
             {
@@ -99,18 +99,18 @@ namespace MapEditor
             this.Close();
         }
 
-        private void onActionFunctionSelected(object sender, EventArgs e)
+        private void OnActionFunctionSelected(object sender, EventArgs e)
         {
             if (this.InputStateFunction.SelectedItem.ToString().Equals("Fire Hitscan"))
             {
-                this.setBulletArgsVisibility(true);
+                this.SetBulletArgsVisibility(true);
             }
             else
             {
-                this.setBulletArgsVisibility(false);
+                this.SetBulletArgsVisibility(false);
             }
         }
-        private void setBulletArgsVisibility(bool vis)
+        private void SetBulletArgsVisibility(bool vis)
         {
             LabelBulletsArg1.Visible = vis;
             InputBulletsArg1.Visible = vis;
@@ -123,7 +123,7 @@ namespace MapEditor
 
         }
 
-        private void removeActorFrame(object sender, EventArgs e)
+        private void RemoveActorFrame(object sender, EventArgs e)
         {
             if(this.frames.Count <= 0)
             {

@@ -412,7 +412,7 @@ namespace MapEditor
             this.AddStateButton.TabIndex = 0;
             this.AddStateButton.Text = "Add";
             this.AddStateButton.UseVisualStyleBackColor = true;
-            this.AddStateButton.Click += new System.EventHandler(this.addActorFrame);
+            this.AddStateButton.Click += new System.EventHandler(this.AddActorFrame);
             // 
             // RemoveStateButton
             // 
@@ -423,7 +423,7 @@ namespace MapEditor
             this.RemoveStateButton.TabIndex = 15;
             this.RemoveStateButton.Text = "Remove";
             this.RemoveStateButton.UseVisualStyleBackColor = true;
-            this.RemoveStateButton.Click += new System.EventHandler(this.removeActorFrame);
+            this.RemoveStateButton.Click += new System.EventHandler(this.RemoveActorFrame);
             // 
             // GroupWeaponAttackStates
             // 
@@ -689,7 +689,7 @@ namespace MapEditor
             this.InputStateFunction.Size = new System.Drawing.Size(184, 26);
             this.InputStateFunction.TabIndex = 11;
             this.InputStateFunction.Tag = "";
-            this.InputStateFunction.DropDownClosed += new System.EventHandler(this.onActionFunctionSelected);
+            this.InputStateFunction.DropDownClosed += new System.EventHandler(this.OnActionFunctionSelected);
             // 
             // CreateWeaponForm
             // 

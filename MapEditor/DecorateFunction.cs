@@ -17,7 +17,7 @@ namespace DecorateFunction
             arguments = args;
         }
 
-        public string getName() { return name; }
+        public string GetName() { return name; }
 
         public override string ToString()
         {
