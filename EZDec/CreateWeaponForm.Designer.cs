@@ -40,25 +40,24 @@ namespace MapEditor
             this.LabelSlotNumber = new System.Windows.Forms.Label();
             this.InputSlotNumber = new System.Windows.Forms.ComboBox();
             this.GroupWeaponProperties = new System.Windows.Forms.GroupBox();
+            this.InputPickupSprite = new System.Windows.Forms.ComboBox();
+            this.InputIdleSprite = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.InputReadySpriteFrame = new System.Windows.Forms.TextBox();
-            this.InputPickupSpriteFrame = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.InputPickupSprite = new System.Windows.Forms.TextBox();
             this.InputAttackSound = new System.Windows.Forms.TextBox();
             this.LabelAttackSound = new System.Windows.Forms.Label();
             this.TextWeaponName = new System.Windows.Forms.TextBox();
             this.TagWeaponName = new System.Windows.Forms.Label();
             this.ButtonCreateWeapon = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.InputReadySprite = new System.Windows.Forms.TextBox();
             this.StatesAdded = new System.Windows.Forms.ListBox();
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.AddStateButton = new System.Windows.Forms.Button();
             this.RemoveStateButton = new System.Windows.Forms.Button();
             this.GroupWeaponAttackStates = new System.Windows.Forms.GroupBox();
+            this.InputAttackSprite = new System.Windows.Forms.ComboBox();
             this.GroupActionArgs = new System.Windows.Forms.GroupBox();
+            this.InputMissileArg1 = new System.Windows.Forms.ComboBox();
+            this.LabelMissileArg1 = new System.Windows.Forms.Label();
             this.InputBulletsArg4 = new System.Windows.Forms.NumericUpDown();
             this.LabelBulletsArg4 = new System.Windows.Forms.Label();
             this.InputBulletsArg3 = new System.Windows.Forms.NumericUpDown();
@@ -71,12 +70,7 @@ namespace MapEditor
             this.InputStateFunction = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.InputStateDuration = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.InputStateFrame = new System.Windows.Forms.TextBox();
             this.LabelStateSprite = new System.Windows.Forms.Label();
-            this.InputStateSprite = new System.Windows.Forms.TextBox();
-            this.LabelMissileArg1 = new System.Windows.Forms.Label();
-            this.InputMissileArg1 = new System.Windows.Forms.ComboBox();
             this.decorateFunctionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actorFrameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoGive)).BeginInit();
@@ -210,12 +204,9 @@ namespace MapEditor
             // 
             // GroupWeaponProperties
             // 
-            this.GroupWeaponProperties.Controls.Add(this.label7);
-            this.GroupWeaponProperties.Controls.Add(this.InputReadySpriteFrame);
-            this.GroupWeaponProperties.Controls.Add(this.InputPickupSpriteFrame);
-            this.GroupWeaponProperties.Controls.Add(this.label5);
-            this.GroupWeaponProperties.Controls.Add(this.label8);
             this.GroupWeaponProperties.Controls.Add(this.InputPickupSprite);
+            this.GroupWeaponProperties.Controls.Add(this.InputIdleSprite);
+            this.GroupWeaponProperties.Controls.Add(this.label7);
             this.GroupWeaponProperties.Controls.Add(this.InputAttackSound);
             this.GroupWeaponProperties.Controls.Add(this.LabelAttackSound);
             this.GroupWeaponProperties.Controls.Add(this.TextWeaponName);
@@ -236,6 +227,47 @@ namespace MapEditor
             this.GroupWeaponProperties.TabStop = false;
             this.GroupWeaponProperties.Text = "Weapon Properties";
             // 
+            // InputPickupSprite
+            // 
+            this.InputPickupSprite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputPickupSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputPickupSprite.FormattingEnabled = true;
+            this.InputPickupSprite.Items.AddRange(new object[] {
+            "Chainsaw",
+            "Pistol",
+            "Shotgun",
+            "Super Shotgun",
+            "Chaingun",
+            "Rocket Launcher",
+            "Plasma Rifle",
+            "BFG9000"});
+            this.InputPickupSprite.Location = new System.Drawing.Point(401, 93);
+            this.InputPickupSprite.MaxLength = 32;
+            this.InputPickupSprite.Name = "InputPickupSprite";
+            this.InputPickupSprite.Size = new System.Drawing.Size(185, 26);
+            this.InputPickupSprite.TabIndex = 22;
+            // 
+            // InputIdleSprite
+            // 
+            this.InputIdleSprite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputIdleSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputIdleSprite.FormattingEnabled = true;
+            this.InputIdleSprite.Items.AddRange(new object[] {
+            "Fist",
+            "Chainsaw",
+            "Pistol",
+            "Shotgun",
+            "Super Shotgun",
+            "Chaingun",
+            "Rocket Launcher",
+            "Plasma Rifle",
+            "BFG9000"});
+            this.InputIdleSprite.Location = new System.Drawing.Point(401, 42);
+            this.InputIdleSprite.MaxLength = 32;
+            this.InputIdleSprite.Name = "InputIdleSprite";
+            this.InputIdleSprite.Size = new System.Drawing.Size(185, 26);
+            this.InputIdleSprite.TabIndex = 21;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -245,59 +277,6 @@ namespace MapEditor
             this.label7.Size = new System.Drawing.Size(84, 18);
             this.label7.TabIndex = 20;
             this.label7.Text = "Pickup Sprite";
-            // 
-            // InputReadySpriteFrame
-            // 
-            this.InputReadySpriteFrame.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputReadySpriteFrame.Location = new System.Drawing.Point(491, 43);
-            this.InputReadySpriteFrame.MaxLength = 1;
-            this.InputReadySpriteFrame.Name = "InputReadySpriteFrame";
-            this.InputReadySpriteFrame.Size = new System.Drawing.Size(42, 23);
-            this.InputReadySpriteFrame.TabIndex = 17;
-            this.InputReadySpriteFrame.Tag = "";
-            this.InputReadySpriteFrame.Text = "A";
-            // 
-            // InputPickupSpriteFrame
-            // 
-            this.InputPickupSpriteFrame.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPickupSpriteFrame.Location = new System.Drawing.Point(491, 93);
-            this.InputPickupSpriteFrame.MaxLength = 1;
-            this.InputPickupSpriteFrame.Name = "InputPickupSpriteFrame";
-            this.InputPickupSpriteFrame.Size = new System.Drawing.Size(42, 23);
-            this.InputPickupSpriteFrame.TabIndex = 21;
-            this.InputPickupSpriteFrame.Tag = "";
-            this.InputPickupSpriteFrame.Text = "A";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(488, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 18);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Frame";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(488, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 18);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Frame";
-            // 
-            // InputPickupSprite
-            // 
-            this.InputPickupSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputPickupSprite.Location = new System.Drawing.Point(400, 92);
-            this.InputPickupSprite.MaxLength = 4;
-            this.InputPickupSprite.Name = "InputPickupSprite";
-            this.InputPickupSprite.Size = new System.Drawing.Size(57, 23);
-            this.InputPickupSprite.TabIndex = 19;
-            this.InputPickupSprite.Tag = "";
-            this.InputPickupSprite.Text = "PIST";
             // 
             // InputAttackSound
             // 
@@ -352,7 +331,7 @@ namespace MapEditor
             this.ButtonCreateWeapon.TabIndex = 13;
             this.ButtonCreateWeapon.Text = "Create";
             this.ButtonCreateWeapon.UseVisualStyleBackColor = true;
-            this.ButtonCreateWeapon.Click += new System.EventHandler(this.WriteWeaponToFile);
+            this.ButtonCreateWeapon.Click += new System.EventHandler(this.CreateButtonClick);
             // 
             // label6
             // 
@@ -363,17 +342,6 @@ namespace MapEditor
             this.label6.Size = new System.Drawing.Size(68, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Idle Sprite";
-            // 
-            // InputReadySprite
-            // 
-            this.InputReadySprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputReadySprite.Location = new System.Drawing.Point(420, 56);
-            this.InputReadySprite.MaxLength = 4;
-            this.InputReadySprite.Name = "InputReadySprite";
-            this.InputReadySprite.Size = new System.Drawing.Size(57, 23);
-            this.InputReadySprite.TabIndex = 15;
-            this.InputReadySprite.Tag = "";
-            this.InputReadySprite.Text = "PISG";
             // 
             // StatesAdded
             // 
@@ -421,16 +389,14 @@ namespace MapEditor
             // 
             // GroupWeaponAttackStates
             // 
+            this.GroupWeaponAttackStates.Controls.Add(this.InputAttackSprite);
             this.GroupWeaponAttackStates.Controls.Add(this.RemoveStateButton);
             this.GroupWeaponAttackStates.Controls.Add(this.GroupActionArgs);
             this.GroupWeaponAttackStates.Controls.Add(this.label3);
             this.GroupWeaponAttackStates.Controls.Add(this.InputStateFunction);
             this.GroupWeaponAttackStates.Controls.Add(this.label2);
             this.GroupWeaponAttackStates.Controls.Add(this.InputStateDuration);
-            this.GroupWeaponAttackStates.Controls.Add(this.label1);
-            this.GroupWeaponAttackStates.Controls.Add(this.InputStateFrame);
             this.GroupWeaponAttackStates.Controls.Add(this.LabelStateSprite);
-            this.GroupWeaponAttackStates.Controls.Add(this.InputStateSprite);
             this.GroupWeaponAttackStates.Controls.Add(this.AddStateButton);
             this.GroupWeaponAttackStates.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupWeaponAttackStates.Location = new System.Drawing.Point(19, 166);
@@ -439,6 +405,49 @@ namespace MapEditor
             this.GroupWeaponAttackStates.TabIndex = 14;
             this.GroupWeaponAttackStates.TabStop = false;
             this.GroupWeaponAttackStates.Text = "Weapon Attack States";
+            // 
+            // InputAttackSprite
+            // 
+            this.InputAttackSprite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputAttackSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputAttackSprite.FormattingEnabled = true;
+            this.InputAttackSprite.Items.AddRange(new object[] {
+            "Fist 1 (Idle)",
+            "Fist 2 (Attack)",
+            "Fist 3 (Attack)",
+            "Fist 4 (Attack)",
+            "Chainsaw 1 (Idle)",
+            "Chainsaw 2 (Idle)",
+            "Chainsaw 3 (Attack)",
+            "Chainsaw 4 (Attack)",
+            "Pistol 1 (Idle)",
+            "Pistol 2 (Attack)",
+            "Pistol 3 (Attack)",
+            "Shotgun 1 (Idle)",
+            "Shotgun 2 (Attack)",
+            "Shotgun 3 (Pump)",
+            "Shotgun 4 (Pump)",
+            "Super Shotgun 1 (Idle)",
+            "Super Shotgun 2 (Reload)",
+            "Super Shotgun 3 (Reload)",
+            "Super Shotgun 4 (Reload)",
+            "Super Shotgun 5 (Reload)",
+            "Super Shotgun 6 (Reload)",
+            "Super Shotgun 7 (Reload)",
+            "Super Shotgun 8 (Reload)",
+            "Chaingun 1 (Idle)",
+            "Chaingun 2 (Attack)",
+            "Rocket Launcher 1 (Idle)",
+            "Rocket Launcher 2 (Attack)",
+            "Plasma Rifle 1 (Idle)",
+            "Plasma Rifle 2 (Attack)",
+            "BFG9000 1 (Idle)",
+            "BFG9000 2 (Attack)"});
+            this.InputAttackSprite.Location = new System.Drawing.Point(10, 46);
+            this.InputAttackSprite.MaxLength = 32;
+            this.InputAttackSprite.Name = "InputAttackSprite";
+            this.InputAttackSprite.Size = new System.Drawing.Size(152, 26);
+            this.InputAttackSprite.TabIndex = 22;
             // 
             // GroupActionArgs
             // 
@@ -459,6 +468,35 @@ namespace MapEditor
             this.GroupActionArgs.TabIndex = 14;
             this.GroupActionArgs.TabStop = false;
             this.GroupActionArgs.Text = "Arguments";
+            // 
+            // InputMissileArg1
+            // 
+            this.InputMissileArg1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InputMissileArg1.FormattingEnabled = true;
+            this.InputMissileArg1.Items.AddRange(new object[] {
+            "Rocket",
+            "PlasmaBall",
+            "BFGBall",
+            "DoomImpBall",
+            "BaronBall",
+            "ArachnotronPlasma",
+            "RevenantTracer",
+            "FatShot"});
+            this.InputMissileArg1.Location = new System.Drawing.Point(3, 40);
+            this.InputMissileArg1.Name = "InputMissileArg1";
+            this.InputMissileArg1.Size = new System.Drawing.Size(169, 26);
+            this.InputMissileArg1.TabIndex = 18;
+            this.InputMissileArg1.Visible = false;
+            // 
+            // LabelMissileArg1
+            // 
+            this.LabelMissileArg1.AutoSize = true;
+            this.LabelMissileArg1.Location = new System.Drawing.Point(2, 19);
+            this.LabelMissileArg1.Name = "LabelMissileArg1";
+            this.LabelMissileArg1.Size = new System.Drawing.Size(79, 18);
+            this.LabelMissileArg1.TabIndex = 17;
+            this.LabelMissileArg1.Text = "Missile Type";
+            this.LabelMissileArg1.Visible = false;
             // 
             // InputBulletsArg4
             // 
@@ -594,7 +632,7 @@ namespace MapEditor
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(188, 28);
+            this.label3.Location = new System.Drawing.Point(217, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 18);
             this.label3.TabIndex = 12;
@@ -610,9 +648,9 @@ namespace MapEditor
             "Fire Hitscan",
             "Fire Projectile",
             "Fire Railgun"});
-            this.InputStateFunction.Location = new System.Drawing.Point(188, 46);
+            this.InputStateFunction.Location = new System.Drawing.Point(219, 46);
             this.InputStateFunction.Name = "InputStateFunction";
-            this.InputStateFunction.Size = new System.Drawing.Size(184, 26);
+            this.InputStateFunction.Size = new System.Drawing.Size(153, 26);
             this.InputStateFunction.TabIndex = 11;
             this.InputStateFunction.Tag = "";
             this.InputStateFunction.DropDownClosed += new System.EventHandler(this.OnActionFunctionSelected);
@@ -621,7 +659,7 @@ namespace MapEditor
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 28);
+            this.label2.Location = new System.Drawing.Point(155, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 18);
             this.label2.TabIndex = 10;
@@ -630,7 +668,7 @@ namespace MapEditor
             // InputStateDuration
             // 
             this.InputStateDuration.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateDuration.Location = new System.Drawing.Point(126, 49);
+            this.InputStateDuration.Location = new System.Drawing.Point(170, 47);
             this.InputStateDuration.Maximum = new decimal(new int[] {
             500,
             0,
@@ -645,27 +683,6 @@ namespace MapEditor
             0,
             0});
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Frame";
-            // 
-            // InputStateFrame
-            // 
-            this.InputStateFrame.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateFrame.Location = new System.Drawing.Point(76, 49);
-            this.InputStateFrame.MaxLength = 1;
-            this.InputStateFrame.Name = "InputStateFrame";
-            this.InputStateFrame.Size = new System.Drawing.Size(42, 23);
-            this.InputStateFrame.TabIndex = 3;
-            this.InputStateFrame.Tag = "";
-            this.InputStateFrame.Text = "A";
-            // 
             // LabelStateSprite
             // 
             this.LabelStateSprite.AutoSize = true;
@@ -675,46 +692,6 @@ namespace MapEditor
             this.LabelStateSprite.Size = new System.Drawing.Size(43, 18);
             this.LabelStateSprite.TabIndex = 2;
             this.LabelStateSprite.Text = "Sprite";
-            // 
-            // InputStateSprite
-            // 
-            this.InputStateSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputStateSprite.Location = new System.Drawing.Point(9, 49);
-            this.InputStateSprite.MaxLength = 4;
-            this.InputStateSprite.Name = "InputStateSprite";
-            this.InputStateSprite.Size = new System.Drawing.Size(57, 23);
-            this.InputStateSprite.TabIndex = 1;
-            this.InputStateSprite.Tag = "";
-            this.InputStateSprite.Text = "PISG";
-            // 
-            // LabelMissileArg1
-            // 
-            this.LabelMissileArg1.AutoSize = true;
-            this.LabelMissileArg1.Location = new System.Drawing.Point(2, 19);
-            this.LabelMissileArg1.Name = "LabelMissileArg1";
-            this.LabelMissileArg1.Size = new System.Drawing.Size(79, 18);
-            this.LabelMissileArg1.TabIndex = 17;
-            this.LabelMissileArg1.Text = "Missile Type";
-            this.LabelMissileArg1.Visible = false;
-            // 
-            // InputMissileArg1
-            // 
-            this.InputMissileArg1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.InputMissileArg1.FormattingEnabled = true;
-            this.InputMissileArg1.Items.AddRange(new object[] {
-            "Rocket",
-            "PlasmaBall",
-            "BFGBall",
-            "DoomImpBall",
-            "BaronBall",
-            "ArachnotronPlasma",
-            "RevenantTracer",
-            "FatShot"});
-            this.InputMissileArg1.Location = new System.Drawing.Point(3, 40);
-            this.InputMissileArg1.Name = "InputMissileArg1";
-            this.InputMissileArg1.Size = new System.Drawing.Size(169, 26);
-            this.InputMissileArg1.TabIndex = 18;
-            this.InputMissileArg1.Visible = false;
             // 
             // decorateFunctionBindingSource
             // 
@@ -733,7 +710,6 @@ namespace MapEditor
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.StatesAdded);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.InputReadySprite);
             this.Controls.Add(this.GroupWeaponAttackStates);
             this.Controls.Add(this.ButtonCreateWeapon);
             this.Controls.Add(this.GroupWeaponProperties);
@@ -777,13 +753,7 @@ namespace MapEditor
         private System.Windows.Forms.Label LabelAttackSound;
         private System.Windows.Forms.BindingSource decorateFunctionBindingSource;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox InputReadySpriteFrame;
-        private System.Windows.Forms.TextBox InputPickupSpriteFrame;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox InputPickupSprite;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox InputReadySprite;
         private System.Windows.Forms.ListBox StatesAdded;
         private System.Windows.Forms.BindingSource actorFrameBindingSource;
         private System.Windows.Forms.Button ButtonCancel;
@@ -803,12 +773,12 @@ namespace MapEditor
         private System.Windows.Forms.ComboBox InputStateFunction;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown InputStateDuration;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox InputStateFrame;
         private System.Windows.Forms.Label LabelStateSprite;
-        private System.Windows.Forms.TextBox InputStateSprite;
         private System.Windows.Forms.ComboBox InputMissileArg1;
         private System.Windows.Forms.Label LabelMissileArg1;
+        private System.Windows.Forms.ComboBox InputPickupSprite;
+        private System.Windows.Forms.ComboBox InputIdleSprite;
+        private System.Windows.Forms.ComboBox InputAttackSprite;
     }
 }
 
