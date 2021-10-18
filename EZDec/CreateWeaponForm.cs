@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using DecorateWriter;
 
-namespace MapEditor
+namespace EZDec
 {
     public partial class CreateWeaponForm : Form
     {
@@ -80,7 +80,7 @@ namespace MapEditor
             else if (this.InputStateFunction.Text.Equals("Fire Projectile"))
             {
                 DecorateFunction.DecorateFunction dfunc = new DecorateFunction.DecorateFunction("A_FireCustomMissile",
-                    new string[] { "\"" + this.InputMissileArg1.SelectedItem.ToString() + "\"", "0.0", "true", "0.0", "-2.0", "0", "0.0"});
+                    new string[] { "\"" + this.InputMissileArg1.SelectedItem.ToString() + "\"", this.InputMissileArg2.Value.ToString(), "true", "0.0", "-2.0", "0", this.InputMissileArg3.Value.ToString() });
           
                 frames.Add(new ActorFrame.ActorFrame(this.GetActorFrameSprite(), this.GetActorFrameIndex(), (int)this.InputStateDuration.Value, dfunc));
                 this.StatesAdded.Items.Add(frames.ElementAt(frames.Count - 1));
@@ -158,10 +158,11 @@ namespace MapEditor
                 return "SAWG";
             if (InputAttackSprite.Text.Contains("Pistol"))
                 return "PISG";
-            if (InputAttackSprite.Text.Contains("Shotgun"))
-                return "SHTG";
+            //This must come first or it will be replaced with the regular shotgun sprites.
             if (InputAttackSprite.Text.Contains("Super Shotgun"))
                 return "SHT2";
+            if (InputAttackSprite.Text.Contains("Shotgun"))
+                return "SHTG";
             if (InputAttackSprite.Text.Contains("Chaingun"))
                 return "CHGG";
             if (InputAttackSprite.Text.Contains("Rocket Launcher"))
@@ -170,6 +171,8 @@ namespace MapEditor
                 return "PLSG";
             if (InputAttackSprite.Text.Contains("BFG9000"))
                 return "BFGG";
+            if (InputAttackSprite.Text.Contains("No Sprite"))
+                return "TNT1";
             Console.WriteLine("Error in InputAttackSprite: Value \"" + InputAttackSprite.Text + "\" does not match a valid value!");
             return "TNT1";
         }
@@ -254,7 +257,11 @@ namespace MapEditor
         private void SetMissileArgsVisibility(bool vis)
         {
             LabelMissileArg1.Visible = vis;
+            LabelMissileArg2.Visible = vis;
+            LabelMissileArg3.Visible = vis;
             InputMissileArg1.Visible = vis;
+            InputMissileArg2.Visible = vis;
+            InputMissileArg3.Visible = vis;
         }
 
         private void RemoveActorFrame(object sender, EventArgs e)
@@ -275,5 +282,9 @@ namespace MapEditor
             }
         }
 
+        private void InputMissileArgs1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

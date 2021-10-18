@@ -29,6 +29,7 @@ namespace ErrorForm
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
             this.LabelError = new System.Windows.Forms.Label();
             this.ButtonCloseWindow = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -65,8 +66,9 @@ namespace ErrorForm
             this.ClientSize = new System.Drawing.Size(336, 124);
             this.Controls.Add(this.ButtonCloseWindow);
             this.Controls.Add(this.LabelError);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ErrorForm";
-            this.Text = "Form1";
+            this.Text = "Error";
             this.Load += new System.EventHandler(this.ErrorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

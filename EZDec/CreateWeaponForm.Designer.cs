@@ -1,5 +1,5 @@
 ﻿
-namespace MapEditor
+namespace EZDec
 {
     partial class CreateWeaponForm
     {
@@ -73,6 +73,10 @@ namespace MapEditor
             this.LabelStateSprite = new System.Windows.Forms.Label();
             this.decorateFunctionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.actorFrameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.InputMissileArg3 = new System.Windows.Forms.NumericUpDown();
+            this.InputMissileArg2 = new System.Windows.Forms.NumericUpDown();
+            this.LabelMissileArg3 = new System.Windows.Forms.Label();
+            this.LabelMissileArg2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoGive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InputAmmoUse)).BeginInit();
             this.GroupWeaponProperties.SuspendLayout();
@@ -85,6 +89,8 @@ namespace MapEditor
             ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.decorateFunctionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actorFrameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputMissileArg3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputMissileArg2)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelAmmoType
@@ -412,6 +418,7 @@ namespace MapEditor
             this.InputAttackSprite.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InputAttackSprite.FormattingEnabled = true;
             this.InputAttackSprite.Items.AddRange(new object[] {
+            "No Sprite (TNT1A0)",
             "Fist 1 (Idle)",
             "Fist 2 (Attack)",
             "Fist 3 (Attack)",
@@ -451,6 +458,10 @@ namespace MapEditor
             // 
             // GroupActionArgs
             // 
+            this.GroupActionArgs.Controls.Add(this.LabelMissileArg2);
+            this.GroupActionArgs.Controls.Add(this.LabelMissileArg3);
+            this.GroupActionArgs.Controls.Add(this.InputMissileArg3);
+            this.GroupActionArgs.Controls.Add(this.InputMissileArg2);
             this.GroupActionArgs.Controls.Add(this.InputMissileArg1);
             this.GroupActionArgs.Controls.Add(this.LabelMissileArg1);
             this.GroupActionArgs.Controls.Add(this.InputBulletsArg4);
@@ -482,7 +493,7 @@ namespace MapEditor
             "ArachnotronPlasma",
             "RevenantTracer",
             "FatShot"});
-            this.InputMissileArg1.Location = new System.Drawing.Point(3, 40);
+            this.InputMissileArg1.Location = new System.Drawing.Point(2, 40);
             this.InputMissileArg1.Name = "InputMissileArg1";
             this.InputMissileArg1.Size = new System.Drawing.Size(169, 26);
             this.InputMissileArg1.TabIndex = 18;
@@ -614,7 +625,7 @@ namespace MapEditor
             65536});
             this.InputBulletsArg1.Location = new System.Drawing.Point(2, 40);
             this.InputBulletsArg1.Maximum = new decimal(new int[] {
-            100,
+            200,
             0,
             0,
             65536});
@@ -693,13 +704,74 @@ namespace MapEditor
             this.LabelStateSprite.TabIndex = 2;
             this.LabelStateSprite.Text = "Sprite";
             // 
-            // decorateFunctionBindingSource
+            // InputMissileArg3
             // 
-            this.decorateFunctionBindingSource.DataSource = typeof(DecorateFunction.DecorateFunction);
+            this.InputMissileArg3.DecimalPlaces = 1;
+            this.InputMissileArg3.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.InputMissileArg3.Location = new System.Drawing.Point(271, 40);
+            this.InputMissileArg3.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.InputMissileArg3.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
+            this.InputMissileArg3.Name = "InputMissileArg3";
+            this.InputMissileArg3.Size = new System.Drawing.Size(88, 23);
+            this.InputMissileArg3.TabIndex = 20;
+            this.InputMissileArg3.Visible = false;
             // 
-            // actorFrameBindingSource
+            // InputMissileArg2
             // 
-            this.actorFrameBindingSource.DataSource = typeof(ActorFrame.ActorFrame);
+            this.InputMissileArg2.DecimalPlaces = 1;
+            this.InputMissileArg2.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.InputMissileArg2.Location = new System.Drawing.Point(177, 40);
+            this.InputMissileArg2.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            65536});
+            this.InputMissileArg2.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
+            this.InputMissileArg2.Name = "InputMissileArg2";
+            this.InputMissileArg2.Size = new System.Drawing.Size(85, 23);
+            this.InputMissileArg2.TabIndex = 19;
+            this.InputMissileArg2.Visible = false;
+            this.InputMissileArg2.ValueChanged += new System.EventHandler(this.InputMissileArgs1_ValueChanged);
+            // 
+            // LabelMissileArg3
+            // 
+            this.LabelMissileArg3.AutoSize = true;
+            this.LabelMissileArg3.Location = new System.Drawing.Point(268, 20);
+            this.LabelMissileArg3.Name = "LabelMissileArg3";
+            this.LabelMissileArg3.Size = new System.Drawing.Size(50, 18);
+            this.LabelMissileArg3.TabIndex = 21;
+            this.LabelMissileArg3.Text = "Y Angle";
+            this.LabelMissileArg3.Visible = false;
+            // 
+            // LabelMissileArg2
+            // 
+            this.LabelMissileArg2.AutoSize = true;
+            this.LabelMissileArg2.Location = new System.Drawing.Point(177, 19);
+            this.LabelMissileArg2.Name = "LabelMissileArg2";
+            this.LabelMissileArg2.Size = new System.Drawing.Size(50, 18);
+            this.LabelMissileArg2.TabIndex = 22;
+            this.LabelMissileArg2.Text = "X Angle";
+            this.LabelMissileArg2.Visible = false;
             // 
             // CreateWeaponForm
             // 
@@ -731,6 +803,8 @@ namespace MapEditor
             ((System.ComponentModel.ISupportInitialize)(this.InputStateDuration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.decorateFunctionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actorFrameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputMissileArg3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InputMissileArg2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,6 +853,10 @@ namespace MapEditor
         private System.Windows.Forms.ComboBox InputPickupSprite;
         private System.Windows.Forms.ComboBox InputIdleSprite;
         private System.Windows.Forms.ComboBox InputAttackSprite;
+        private System.Windows.Forms.NumericUpDown InputMissileArg3;
+        private System.Windows.Forms.NumericUpDown InputMissileArg2;
+        private System.Windows.Forms.Label LabelMissileArg2;
+        private System.Windows.Forms.Label LabelMissileArg3;
     }
 }
 
